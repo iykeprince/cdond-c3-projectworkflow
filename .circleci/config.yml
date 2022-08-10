@@ -204,7 +204,7 @@ jobs:
           at: ~/
       - add_ssh_keys:
           fingerprints:
-            - "74:9d:14:cb:d2:35:1d:48:18:bb:75:f0:be:13:dd:93"
+            - "82:06:8c:eb:b3:84:32:f4:82:b3:03:59:0e:9f:35:4b"
       # - install_ansible
       - run:
           name: Install dependencies
@@ -306,7 +306,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "74:9d:14:cb:d2:35:1d:48:18:bb:75:f0:be:13:dd:93"
+            - "82:06:8c:eb:b3:84:32:f4:82:b3:03:59:0e:9f:35:4b"
       - attach_workspace:
           at: ~/
       - install_nodejs
