@@ -399,15 +399,15 @@ jobs:
           name: Update cloudfront distribution
           command: |
             # your code here 
-            export OldWorkflowID=$(aws  cloudformation list-exports —query “Exports[?Name==\`WorkflowID\`].Value” —no-paginate —output text)
+            export OldWorkflowID=$(aws  cloudformation list-exports —-query "Exports[?Name==\`WorkflowID\`].Value" -—no-paginate —-output text)
             echo $OldWorkflowID >> ~/OldWorkflowID.txt
             cat ~/OldWorkflowID.txt
 
             aws cloudformation deploy \
-            --template-file .circleci/files/cloudfront.yml \
-            --stack-name InitialStack \
-            --parameter-overrides WorkflowID="${CIRCLE_WORKFLOW_ID:0:7}" \
-            --tags project=udapeople
+              --template-file .circleci/files/cloudfront.yml \
+              --stack-name InitialStack \
+              --parameter-overrides WorkflowID="${CIRCLE_WORKFLOW_ID:0:7}" \
+              --tags project=udapeople
 
             echo OldWorkflowID: $OldWorkflowID
             echo Current Workflow Id: ${CIRCLE_WORKFLOW_ID:0:7}
@@ -442,7 +442,7 @@ jobs:
             if [[ "${STACKS[@]}" =~ "${OldWorkflowID}" ]]
             then
               # your code here
-              aws s3 rm "s3://udapeople-${OldWorkflow}" --recursive
+              aws s3 rm "s3://udapeople-${OldWorkflowID}" --recursive
               aws cloudformation delete-stack --stack-name "udapeople-frontend-${OldWorkflowID}"
               aws cloudformation delete-stack --stack-name "udapeople-backend-${OldWorkflowID}"
             fi
