@@ -1,2 +1,5 @@
 [URL01] https://github.com/iykeprince/cdond-c3-projectworkflow.git
 [URL02] http://udapeople-0c320cd.s3-website-us-east-1.amazonaws.com/#/employees
+
+[URL03] http://d3cr46a4dnvt3p.cloudfront.net/#/employees
+[URL04] http://ec2-34-228-78-235.compute-1.amazonaws.com:3030/api/status
